@@ -1,0 +1,25 @@
+
+{
+  "manifest_version": 3,
+  "name": "HubSpot Helper BFS Container-Only",
+  "version": "1.0",
+  "description": "Captura dados e adiciona um botão do WhatsApp no HubSpot .",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://app.hubspot.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.hubspot.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
